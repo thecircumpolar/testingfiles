@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to My Epic Website!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Retro Website!</title>
     <style>
         body {
             background-color: #000000;
@@ -9,117 +11,177 @@
             font-family: "Comic Sans MS", cursive;
             margin: 0;
             padding: 20px;
+            background-image: url('https://web.archive.org/web/20090830110110/http://geocities.com/Area51/Corridor/5177/stars.gif');
         }
-        
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #000066;
+            background-color: #000033;
             border: 5px solid #ff00ff;
             padding: 20px;
-            box-shadow: 0 0 20px #ff00ff;
+            box-shadow: 0 0 20px #00ffff;
         }
-        
+
         h1 {
             color: #ff00ff;
             text-align: center;
-            text-shadow: 2px 2px #00ff00;
-            font-size: 48px;
-            animation: rainbow 3s infinite;
+            text-shadow: 2px 2px #00ffff;
+            animation: rainbow 5s infinite;
         }
-        
+
         .marquee {
-            background-color: #000000;
-            color: #ff0000;
+            background-color: #000066;
+            color: #ffff00;
             padding: 10px;
             margin: 20px 0;
-            border: 2px solid #ff00ff;
+            border: 2px dashed #ff00ff;
         }
-        
-        .counter {
-            text-align: center;
-            font-size: 24px;
-            color: #ff00ff;
-            margin: 20px 0;
+
+        .guestbook-form {
+            background-color: #330033;
+            padding: 20px;
+            margin-top: 20px;
+            border: 3px solid #00ffff;
         }
-        
-        .construction {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 24px;
-            color: #ff0000;
-        }
-        
-        .links {
-            text-align: center;
-            margin: 20px 0;
-        }
-        
-        .links a {
+
+        input, textarea {
+            background-color: #000066;
             color: #00ff00;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 20px;
+            border: 2px solid #ff00ff;
+            padding: 5px;
+            margin: 5px 0;
+            width: 100%;
         }
-        
-        .links a:hover {
-            color: #ff00ff;
-            text-decoration: underline;
+
+        button {
+            background-color: #ff00ff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: "Comic Sans MS", cursive;
+            font-size: 16px;
         }
-        
+
+        button:hover {
+            background-color: #00ffff;
+            color: #000000;
+        }
+
+        .guestbook-entries {
+            margin-top: 20px;
+            border: 2px solid #00ffff;
+            padding: 10px;
+        }
+
+        .entry {
+            background-color: #000066;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ff00ff;
+        }
+
         @keyframes rainbow {
             0% { color: #ff0000; }
             20% { color: #ff00ff; }
-            40% { color: #0000ff; }
+            40% { color: #00ffff; }
             60% { color: #00ff00; }
             80% { color: #ffff00; }
             100% { color: #ff0000; }
         }
-        
+
         .blink {
             animation: blink 1s infinite;
         }
-        
+
         @keyframes blink {
             0% { opacity: 1; }
             50% { opacity: 0; }
             100% { opacity: 1; }
         }
+
+        .counter {
+            text-align: center;
+            font-size: 24px;
+            color: #ff00ff;
+        }
+
+        .bouncing-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #bouncingCanvas {
+            border: 3px solid #00ffff;
+            background-color: #000033;
+            margin: 20px auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Epic Website!</h1>
+        <h1>Welcome to My Retro Website!</h1>
         
         <div class="marquee">
-            <marquee behavior="scroll" direction="left" scrollamount="5">
-                Welcome to the most epic website ever! Don't forget to sign my guestbook! 
+            <marquee behavior="scroll" direction="left">
+                <span class="blink">★ Welcome to my awesome website! ★ Under Construction ★ Best viewed in Netscape Navigator ★</span>
             </marquee>
         </div>
-        
-        <div class="construction">
-            🚧 UNDER CONSTRUCTION 🚧
-        </div>
-        
+
         <div class="counter">
-            You are visitor number: 000001
+            <img src="https://web.archive.org/web/20090830110110/http://geocities.com/Area51/Corridor/5177/counter.gif" alt="Visitor Counter">
+            Visitors: 000001
         </div>
-        
-        <div class="links">
-            <a href="#">Home</a> |
-            <a href="#">About Me</a> |
-            <a href="#">My Photos</a> |
-            <a href="#">Guestbook</a> |
-            <a href="#">Links</a>
+
+        <div class="guestbook-form">
+            <h2>Sign My Guestbook!</h2>
+            <form id="guestbookForm">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        
-        <div style="text-align: center; margin-top: 20px;">
-            <span class="blink">Email me at: webmaster@epicwebsite.com</span>
+
+        <div class="guestbook-entries" id="guestbookEntries">
+            <!-- Guestbook entries will appear here -->
         </div>
-        
-        <div style="text-align: center; margin-top: 20px;">
-            Best viewed with Netscape Navigator at 800x600 resolution
+
+        <div class="bouncing-container">
+            <h2>Bouncing Balls Animation!</h2>
+            <canvas id="bouncingCanvas"></canvas>
         </div>
     </div>
+
+    <script src="bouncing-balls.js"></script>
+    <script>
+        document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            const entry = document.createElement('div');
+            entry.className = 'entry';
+            entry.innerHTML = `
+                <strong>${name}</strong> wrote:<br>
+                ${message}<br>
+                <small>Posted on: ${new Date().toLocaleString()}</small>
+            `;
+            
+            document.getElementById('guestbookEntries').prepend(entry);
+            
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+        });
+    </script>
 </body>
 </html> 
