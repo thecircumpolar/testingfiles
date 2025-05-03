@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My Epic Website!</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Comic Sans MS", cursive;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #000066;
+            border: 5px solid #ff00ff;
+            padding: 20px;
+            box-shadow: 0 0 20px #ff00ff;
+        }
+        
+        h1 {
+            color: #ff00ff;
+            text-align: center;
+            text-shadow: 2px 2px #00ff00;
+            font-size: 48px;
+            animation: rainbow 3s infinite;
+        }
+        
+        .marquee {
+            background-color: #000000;
+            color: #ff0000;
+            padding: 10px;
+            margin: 20px 0;
+            border: 2px solid #ff00ff;
+        }
+        
+        .counter {
+            text-align: center;
+            font-size: 24px;
+            color: #ff00ff;
+            margin: 20px 0;
+        }
+        
+        .construction {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #ff0000;
+        }
+        
+        .links {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .links a {
+            color: #00ff00;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        
+        .links a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+        
+        @keyframes rainbow {
+            0% { color: #ff0000; }
+            20% { color: #ff00ff; }
+            40% { color: #0000ff; }
+            60% { color: #00ff00; }
+            80% { color: #ffff00; }
+            100% { color: #ff0000; }
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Epic Website!</h1>
+        
+        <div class="marquee">
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                Welcome to the most epic website ever! Don't forget to sign my guestbook! 
+            </marquee>
+        </div>
+        
+        <div class="construction">
+            🚧 UNDER CONSTRUCTION 🚧
+        </div>
+        
+        <div class="counter">
+            You are visitor number: 000001
+        </div>
+        
+        <div class="links">
+            <a href="#">Home</a> |
+            <a href="#">About Me</a> |
+            <a href="#">My Photos</a> |
+            <a href="#">Guestbook</a> |
+            <a href="#">Links</a>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <span class="blink">Email me at: webmaster@epicwebsite.com</span>
+        </div>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            Best viewed with Netscape Navigator at 800x600 resolution
+        </div>
+    </div>
+</body>
+</html> 
